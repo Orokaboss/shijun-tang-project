@@ -5,7 +5,7 @@ body {
   padding: 0;
   background-color: #fff;
   color: #111;
-  text-align: center; /* 全局居中对齐 */
+  text-align: center; 
 }
 
 /* 页头标题 */
@@ -13,6 +13,10 @@ body {
   background-color: #fff;
   color: #000;
   padding: 30px 0 10px 0;
+
+  display: flex;                 /* 开启弹性布局 */
+  flex-direction: column;        /* 垂直排列标题和导航 */
+  align-items: center;  
 }
 
 .site-title {
@@ -21,26 +25,9 @@ body {
   font-weight: bold;
 }
 
-/* 导航栏居中 */
-.site-nav {
-  margin-top: 10px;
-}
-
-.site-nav a {
-  color: #000;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.site-nav a:hover {
-  color: #f5c518; /* 金黄色 hover 效果 */
-}
-
 /* 内容区 */
 .container {
-  padding: 60px 20px;
+  padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -68,4 +55,33 @@ footer {
   padding: 20px 0;
   margin-top: 60px;
   font-size: 14px;
+}
+
+/* 首页（index）单独样式 */
+.site-title {
+  margin-bottom: 25px;   /* 加大标题与导航之间距离 */
+}
+
+/* 所有页面通用样式：导航链接间距更大 */
+.site-nav a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 10px;     /* 导航项之间距离改成 25px（原来15） */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+  color: #f5c518;
+}
+
+ul {
+  list-style-position: inside;   /* ✅ 让点出现在文字前面 */
+  padding-left: 0;              /* 去掉多余缩进 */
+  text-align: left;             /* 保证列表左对齐 */
+  display: inline-block;        /* 让整个列表居中显示 */
+}
+
+.subscribe-form {
+  margin-bottom: 40px;   /* 控制订阅区与下面标题的距离 */
 }
